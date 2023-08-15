@@ -2,7 +2,11 @@ document.getElementById('btn-deposit').addEventListener('click', function(){
     const depositInput = document.getElementById('deposit-input');
     const newDepositValueString = depositInput.value ;
     const newDepositValue = parseFloat(newDepositValueString);
-    console.log(typeof newDepositValue)
+    depositInput.value = '';
+    if(isNaN(newDepositValue)){
+        alert('please provide a valid number')
+        return;
+    }
 
     // deposit Amonut section
 
@@ -22,7 +26,7 @@ document.getElementById('btn-deposit').addEventListener('click', function(){
     const newTotalBalanceAmount = newDepositValue + totalBalanceAmount;
     displayBalance.innerText = newTotalBalanceAmount;
 
-    depositInput.value = '';
+    
     
 
 })
